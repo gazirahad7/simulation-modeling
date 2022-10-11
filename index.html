@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="/simulation.js" async></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h2>Simulation Modeling</h2>
+      </div>
+    </header>
+    <div class="container">
+      <div class="main">
+        <div>
+          <div class="input">
+            <input type="number" placeholder="Add customers" id="num" />
+
+            <button type="submit" id="addCustomers">Add Customer</button>
+          </div>
+          <div class="cus-table">
+            <table id="table">
+              <tr>
+                <th>Customer</th>
+                <th>RD for IAT</th>
+                <th>IAT</th>
+                <th>C. AT</th>
+                <th>RD for ST</th>
+                <th>ST</th>
+                <th>TSB</th>
+                <th>WT</th>
+                <th>TSE</th>
+                <th>TSS</th>
+                <th>ITS</th>
+              </tr>
+              <tbody id="table-body"></tbody>
+
+              <tfoot>
+                <tr id="sum-total"></tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="cus-table">
+            <div id="all-average"></div>
+          </div>
+        </div>
+        <div>
+          <h4>Rules for each operation</h4>
+
+          <div id="rules">
+            <details open>
+              <summary>RD for IAT</summary>
+              <p>
+                Random Digits for Inter Arrival Time.
+                <strong>RANDBETWEEN(0, 1000) </strong>
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

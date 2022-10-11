@@ -1,0 +1,104 @@
+[
+  {
+    "no": 1,
+    "name": "RD for Service Time",
+    "description": "Random Digits for Service Time.",
+    "rule": "RD(0, 1000)"
+  },
+  {
+    "no": 2,
+    "name": "IAT",
+    "description": "Inter Arrival Time",
+    "rule": "IF (RD <125 , 1) , first index 0"
+  },
+  {
+    "no": 3,
+    "name": "C. AT",
+    "description": "Cumulative Arrival Time",
+    "rule": "C.AT = AT + IAT like ( IAT2 + AT1), first index 0"
+  },
+  {
+    "no": 4,
+    "name": "RD for ST",
+    "description": "Random Digits for Service Time.",
+    "rule": "RD(0, 100)"
+  },
+  {
+    "no": 5,
+    "name": " ST",
+    "description": " Service Time.",
+    "rule": "IF (RD < 25, 1), first index 0"
+  },
+  {
+    "no": 6,
+    "name": "TSB",
+    "description": "Time Service Begins, first index 0",
+    "rule": "MAX( previous TSE1, C.AT2)"
+  },
+  {
+    "no": 7,
+    "name": "WT",
+    "description": "Waiting Time, first index 0",
+    "rule": "IF(previous TSE1 > C.AT2, previous TSE2 - C.AT2, 0)"
+  },
+  {
+    "no": 8,
+    "name": "TSE",
+    "description": "Time Service Ends",
+    "rule": "ST + TSB"
+  },
+  {
+    "no": 9,
+    "name": "TSS",
+    "description": "Time Spent in System",
+    "rule": "ST + WT"
+  },
+  {
+    "no": 10,
+    "name": "ITS",
+    "description": "Idle Time of Server, first index 0",
+    "rule": "TSB2 - previous TSE1"
+  },
+  {
+    "no": 11,
+    "name": "Avg. WT",
+    "description": "Average Waiting Time",
+    "rule": "Total WT / no. of customers"
+  },
+  {
+    "no": 12,
+    "name": "Probability customer WT",
+    "description": "Probability customer has to wait",
+    "rule": "Count Total wt customer / no. of customers * 100"
+  },
+  {
+    "no": 13,
+    "name": "Probability of IT",
+    "description": "Probability of Idle Time",
+    "rule": "Total Ideal time / Total run time (TSE) * 100"
+  },
+  {
+    "no": 14,
+    "name": "Avg. ST",
+    "description": "Average Service Time",
+    "rule": "Total ST / no. of customers"
+  },
+  {
+    "no": 15,
+    "name": "Avg AT",
+    "description": "Average Arrival Time",
+    "rule": "Total AT / no of AT - 1"
+  },
+  {
+    "no": 16,
+    "name": "Avg. WT",
+    "description": "Average Waiting Time for those who wait",
+    "rule": "Total WT / count no. of customers wait"
+  },
+  {
+    "no": 17,
+    "name": "Avg. TSS",
+    "description": "Average Time Spent in System",
+    "rule": "Total TSS / no. of customers"
+  }
+]
